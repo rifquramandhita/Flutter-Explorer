@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_material3/bottom_navbar/bottom_navbar.dart';
 import 'package:simple_material3/seach/search_screen.dart';
+import 'package:simple_material3/tab/tab_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +47,16 @@ class Home extends StatelessWidget {
                           builder: (context) => SearchScreen(),
                         ));
                   },
-                  child: Text("Search"))
+                  child: Text("Search")),
+              FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TabScreen(),
+                        ));
+                  },
+                  child: Text("Tab"))
             ],
           ),
         ),
