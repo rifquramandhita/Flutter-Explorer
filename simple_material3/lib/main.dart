@@ -14,9 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
-      home: Home()
-    );
+        theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
+        home: Home());
   }
 }
 
@@ -32,44 +31,29 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               FilledButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => BottomNavBar(),
-                        ));
-                  },
+                  onPressed: () => _openPage(context, BottomNavBar()),
                   child: Text("Bottom Navigation Bar")),
               FilledButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SearchScreen(),
-                        ));
-                  },
+                  onPressed: () => _openPage(context, SearchScreen()),
                   child: Text("Search")),
               FilledButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TabScreen(),
-                        ));
-                  },
+                  onPressed: () => _openPage(context, TabScreen()),
                   child: Text("Tab")),
-              FilledButton(onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CardScreen(),
-                    ));
-              }, child: Text("Card"))
+              FilledButton(
+                  onPressed: () => _openPage(context, CardScreen()),
+                  child: Text("Card"))
             ],
           ),
         ),
       ),
     );
   }
-}
 
+  _openPage(BuildContext context, Widget widget) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => widget,
+        ));
+  }
+}
