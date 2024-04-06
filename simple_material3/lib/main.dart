@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_material3/bottom_navbar/bottom_navbar.dart';
+import 'package:simple_material3/card/card_screen.dart';
 import 'package:simple_material3/seach/search_screen.dart';
 import 'package:simple_material3/tab/tab_screen.dart';
 
@@ -56,7 +57,14 @@ class Home extends StatelessWidget {
                           builder: (context) => TabScreen(),
                         ));
                   },
-                  child: Text("Tab"))
+                  child: Text("Tab")),
+              FilledButton(onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CardScreen(),
+                    ));
+              }, child: Text("Card"))
             ],
           ),
         ),
