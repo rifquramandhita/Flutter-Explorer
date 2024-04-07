@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_material3/bottom_navbar/bottom_navbar.dart';
 import 'package:simple_material3/card/card_screen.dart';
+import 'package:simple_material3/navigation_drawer/navigation_drawer_screen.dart';
 import 'package:simple_material3/seach/search_screen.dart';
 import 'package:simple_material3/tab/tab_screen.dart';
 
@@ -33,6 +34,9 @@ class Home extends StatelessWidget {
               FilledButton(
                   onPressed: () => _openPage(context, BottomNavBar()),
                   child: Text("Bottom Navigation Bar")),
+              FilledButton(
+                  onPressed: () => _openPage(context, NavigationDrawerScreen()),
+                  child: Text("Navigation Drawer")),
               FilledButton(
                   onPressed: () => _openPage(context, SearchScreen()),
                   child: Text("Search")),
